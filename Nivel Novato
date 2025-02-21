@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    
+    char estado1, estado2;
+    char cidade1[100], cidade2[100], codigodacarta1[4], codigodacarta2[4];
+    int pop1, pop2, npt1, npt2; 
+    float area1, area2, pib1, pib2;
+
+    printf("Digite o nome do primeiro estado: \n");
+    scanf("%c", &estado1);
+
+    printf("Digite o codigo da carta (ex: A01, B03): \n");
+    scanf("%3s", &codigodacarta1);
+
+    getchar();
+
+    printf("Digite o nome da cidade: \n");
+    fgets(cidade1, sizeof(cidade1), stdin);
+
+    printf("Digite a população: \n");
+    scanf("%d", &pop1);
+
+    printf("Digite a área (em km²): \n");
+    scanf("%f", &area1);
+
+    printf("Digite o PIB: \n");
+    scanf("%f", &pib1);
+
+    printf("Digite a quantidade de pontos túristicos: \n");
+    scanf("%d", &npt1);
+
+    printf("A carta da cidade %s, no estado do(a) %c, foi cadastrada.", cidade1, estado1);
+
+    printf("\n\nDigite o nome do segundo estado: \n");
+    scanf(" %c", &estado2);
+
+    printf("Digite o codigo da carta (ex: A01, B03): \n");
+    scanf("%3s", &codigodacarta2);
+
+    getchar();
+
+    printf("Digite o nome da cidade: \n");
+    fgets(cidade2, sizeof(cidade2), stdin);
+
+    printf("Digite a população: \n");
+    scanf("%d", &pop2);
+
+    printf("Digite a área (em km²): \n");
+    scanf("%f", &area2);
+
+    printf("Digite o PIB: \n");
+    scanf("%f", &pib2);
+
+    printf("Digite a quantidade de pontos túristicos: \n");
+    scanf("%d", &npt2);
+
+    printf("A carta da cidade %s, no estado do(a) %c, foi cadastrada.", cidade2, estado2);
+
+    printf("\nCartas registradas: \n");
+    printf("Carta 1: \nEstado: %c\nCódigo: %s\n", estado1, codigodacarta1);
+    printf("Nome da cidade: %s\nPopulação: %d\n", cidade1, pop1);
+    printf("Área: %f\nPIB: %f\nNúmero de pontos turísticos: %d\n\n", area1, pib1, npt1);
+
+    printf("Carta 2: \nEstado: %c\nCódigo: %s\n", estado2, codigodacarta2);
+    printf("Nome da cidade: %s\nPopulação: %d\n", cidade2, pop2);
+    printf("Área: %f\nPIB: %f\nNúmero de pontos turísticos: %d", area2, pib2, npt2);
+
+    return 0;
+}
