@@ -58,9 +58,12 @@ int main(){
     scanf("%d", &npt2);
 
     densPop1 = pop1/area1;
+
     densPop2 = pop2/area2;
 
+
     pibPerCapita1 = pib1/pop1;
+
     pibPerCapita2 = pib2/pop2;
 
     
