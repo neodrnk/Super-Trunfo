@@ -3,11 +3,11 @@
 
 int main(){
     setlocale(LC_ALL, "Portuguese");
-    
+
     char estado1, estado2;
     char cidade1[100], cidade2[100], codigodacarta1[4], codigodacarta2[4];
     int pop1, pop2, npt1, npt2; 
-    float area1, area2, pib1, pib2;
+    float area1, area2, pib1, pib2, densPop1, densPop2, pibPerCapita1, pibPerCapita2;
 
     printf("Digite o nome do primeiro estado: \n");
     scanf("%c", &estado1);
@@ -32,7 +32,7 @@ int main(){
     printf("Digite a quantidade de pontos túristicos: \n");
     scanf("%d", &npt1);
 
-    printf("A carta da cidade %s, no estado do(a) %c, foi cadastrada.", cidade1, estado1);
+    
 
     printf("\n\nDigite o nome do segundo estado: \n");
     scanf(" %c", &estado2);
@@ -57,16 +57,27 @@ int main(){
     printf("Digite a quantidade de pontos túristicos: \n");
     scanf("%d", &npt2);
 
-    printf("A carta da cidade %s, no estado do(a) %c, foi cadastrada.", cidade2, estado2);
+    densPop1 = pop1/area1;
+    densPop2 = pop2/area2;
+
+    pibPerCapita1 = pib1/pop1;
+    pibPerCapita2 = pib2/pop2;
+
+    
 
     printf("\nCartas registradas: \n");
-    printf("Carta 1: \nEstado: %c\nCódigo: %s\n", estado1, codigodacarta1);
-    printf("Nome da cidade: %s\nPopulação: %d\n", cidade1, pop1);
-    printf("Área: %f\nPIB: %f\nNúmero de pontos turísticos: %d\n\n", area1, pib1, npt1);
 
-    printf("Carta 2: \nEstado: %c\nCódigo: %s\n", estado2, codigodacarta2);
-    printf("Nome da cidade: %s\nPopulação: %d\n", cidade2, pop2);
-    printf("Área: %f\nPIB: %f\nNúmero de pontos turísticos: %d", area2, pib2, npt2);
+    printf("\nCarta 1: \nEstado: %c\nCódigo: %s", estado1, codigodacarta1);
+    printf("\nNome da cidade: %sPopulação: %d", cidade1, pop1);
+    printf("\nÁrea: %.2f\nPIB: %.2f\nNúmero de pontos turísticos: %d", area1, pib1, npt1);
+    printf("\nDensidade Populacional: %.2f", densPop1);
+    printf("\nPIB Per Capita: %.2f\n", pibPerCapita1);
+
+    printf("\nCarta 2: \nEstado: %c\nCódigo: %s", estado2, codigodacarta2);
+    printf("\nNome da cidade: %sPopulação: %d", cidade2, pop2);
+    printf("\nÁrea: %.2f\nPIB: %.2f\nNúmero de pontos turísticos: %d", area2, pib2, npt2);
+    printf("\nDensidade Populacional: %.2f", densPop2);
+    printf("\nPIB Per Capita: %.2f\n", pibPerCapita2);
 
     return 0;
 }
